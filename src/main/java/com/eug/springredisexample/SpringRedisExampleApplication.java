@@ -9,5 +9,11 @@ public class SpringRedisExampleApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringRedisExampleApplication.class, args);
+
+		RedisTester tester = context.getBean(RedisTester.class);
+
+		var value = tester.insertOne();
+		Student found = tester.findOne(value.getId());
+		System.out.println("Found: " + found);
 	}
 }
