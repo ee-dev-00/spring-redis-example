@@ -24,4 +24,8 @@ public class RedisTester {
     public Student findOne(String id) {
         return studentRepository.findById(id).orElseThrow();
     }
+
+    public void deleteById(String id) {
+        studentRepository.deleteById(id);
+    }
 }

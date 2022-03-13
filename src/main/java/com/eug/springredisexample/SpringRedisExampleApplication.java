@@ -7,13 +7,11 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class SpringRedisExampleApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringRedisExampleApplication.class, args);
 
-		RedisTester tester = context.getBean(RedisTester.class);
+		RedisLoadTester tester = context.getBean(RedisLoadTester.class);
 
-		var value = tester.insertOne();
-		Student found = tester.findOne(value.getId());
-		System.out.println("Found: " + found);
+		tester.doLoadTest();
 	}
 }
