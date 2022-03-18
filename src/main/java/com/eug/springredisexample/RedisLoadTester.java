@@ -13,7 +13,7 @@ public class RedisLoadTester {
 
     public void doLoadTest() throws InterruptedException {
         System.out.println("Waiting 5 sec before starting a test...");
-        Thread.sleep(5000L);
+        Thread.sleep(1000L);
         System.out.println("Starting a load test!");
 
         long start = System.currentTimeMillis();
